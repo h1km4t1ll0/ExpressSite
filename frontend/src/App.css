@@ -95,7 +95,8 @@ label {
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(54deg, #7309AA, #612580, #4A036F, #A13DD5, #AF66D5, #2818B1, #382F85, #130873, #5B4CD8, #7C71D8);
+    background: linear-gradient(54deg, #7309AA, #612580, #4A036F, #A13DD5, #AF66D5, #2818B1,
+                                #382F85, #130873, #5B4CD8, #7C71D8);
     position: absolute;
     top: -2px;
     left:-2px;

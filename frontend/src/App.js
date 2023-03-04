@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./elements/Auth";
 import Default from "./elements/Default";
 import Error from "./elements/Error";
-import Successes from "./elements/Successes";
+import Success from "./elements/Success";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
             <Route path="/" element={<Default />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/error" element={<Error/>} />
-            <Route path="/successes" element={<Successes/>} />
+            <Route path="/success" element={<Success/>} />
         </Routes>
       </BrowserRouter>
   );

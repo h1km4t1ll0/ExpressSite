@@ -1,6 +1,12 @@
 import mongoose from "mongoose";
-const connection = await mongoose.connect('mongodb://root:rootpassword@localhost:27017/');
 
-export default connection;
+async function connect (){
+    await mongoose.connect('mongodb://root:rootpassword@127.0.0.1:27017');
+}
+
+async function disconnect(){
+    await mongoose.disconnect()
+}
+export {connect, disconnect};
 
 

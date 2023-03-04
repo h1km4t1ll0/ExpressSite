@@ -32,21 +32,24 @@ export default function (props) {
         }
         let result = 300;
         try {
-            result = (await fetch(requestUrl,
+            result = await fetch(requestUrl,
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type": "Application/json"
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(formData)
-                })).status
+                })
+            result = result.status;
         } catch (e) {
             navigate('/error')
         }
         if (result === 200) {
-           navigate('/successes')
+           navigate('/success')
+        } else {
+            navigate('/error')
         }
-        navigate('/error')
     };
 
 

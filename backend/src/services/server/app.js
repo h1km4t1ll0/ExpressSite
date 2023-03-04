@@ -1,12 +1,19 @@
 import express from  "express"
-import {checkLogin} from "../database/index.js";
+import cors from 'cors'
+import {register} from "../../controllers/register.js";
 import {login} from "../../controllers/login.js";
-
 const app = express()
-const port = 3000
-export default app;
+
+app.use(cors())
+app.use(express.json())
 
 app.post('/api/login', async (req, res) => {
-    res.status(await login(req)).send();
+    await res.sendStatus(await login(req))
 })
 
+app.post('/api/register', async (req, res) => {
+   await res.sendStatus(await register(req))
+})
+
+
+export default app;

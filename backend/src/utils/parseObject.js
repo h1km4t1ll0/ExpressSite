@@ -1,3 +1,7 @@
-export function parseObject(data){
-    return JSON.parse(data.body);
+export function parseObject(data) {
+    try {
+        return JSON.parse(data.body);
+    } catch (e) {
+        return false;
+    }
 }
