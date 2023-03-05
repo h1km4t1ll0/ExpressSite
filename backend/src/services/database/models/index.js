@@ -1,2 +1,3 @@
 //import {User} from './user'
-export {default as User} from "./user.js"
+export {UserSchema, User} from "./user.js"
+export {default as Report} from './report.js'

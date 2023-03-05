@@ -1,0 +1,1 @@
+export const DB_URL = 'mongodb://root:rootpassword@172.20.10.5:27017';

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-
+import {DB_URL} from "../../configs/dbConf.js";
 async function connect (){
-    await mongoose.connect('mongodb://root:rootpassword@127.0.0.1:27017');
+    await mongoose.connect(DB_URL);
 }
 
 async function disconnect(){
