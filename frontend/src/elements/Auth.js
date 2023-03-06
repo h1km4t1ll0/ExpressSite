@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 import Error from "./Error";
 import {useNavigate} from "react-router-dom";
 
@@ -46,12 +46,11 @@ export default function (props) {
             navigate('/error')
         }
         if (result === 200) {
-           navigate('/success')
+            navigate('/account')
         } else {
             navigate('/error')
         }
     };
-
 
     const changeAuthMode = () => {
         setAuthMode(authMode === "signin" ? "signup" : "signin")
