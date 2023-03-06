@@ -1,7 +1,7 @@
 import {User} from './models/index.js'
 import {connect, disconnect} from './connector.js'
 import {Callback} from "../../callback.js";
-import mongoose from "mongoose";
+import {assign} from "../../utils/setObjProp.js"
 
 export async function checkLogin(login, password) {
     await connect()
@@ -40,3 +40,8 @@ export async function registration(name, login, password) {
     return new Callback(true, null);
 }
 
+export async function updateAny(id, value, field){
+    let obj = {}
+    await assign(obj, field, value)
+    await User.updateOne({_id:id}, obj)
+}
