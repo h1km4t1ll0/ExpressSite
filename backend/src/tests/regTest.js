@@ -1,17 +1,22 @@
 import {checkLogin} from '../services/database/index.js'
 import {User} from '../services/database/models/index.js'
 import {Report} from "../services/database/models/index.js";
-//import {changeField} from "../services/database/index.js";
+import {updateAny} from "../services/database/index.js";
 import {connect} from '../services/database/connector.js'
 
 await connect()
+
+
 let user = new User();
 user.name = "Bibka";
 user.login = 'biba';
 user.password = '1234';
-user.phone = 888888888;
+user.phone = '324242423'
 user.subUsers.push('Huesos');
+user.avatar = 'p1';
 await user.save();
+
+
 
 let report = new Report();
 report.expenseFoPeriod = 12332;
@@ -23,7 +28,10 @@ report.placement = 'pizda';
 report.users.push(user);
 await report.save();
 
-console.log(user.subUsers);
+await updateAny(user._id, 'Boba', 'name');
+
+console.log(await User.find({_id:user._id}));
+
 /*async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
